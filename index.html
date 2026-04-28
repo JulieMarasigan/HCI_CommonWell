@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="Content-Security-Policy"
+content="default-src 'self'; connect-src 'self' http://127.0.0.1:5500">
+  <title>CommonWell — HCI2 Usability Evaluation Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-brand">
+    <span class="nav-cross">✚</span>
+    <span>CommonWell</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="pages/data-gathering.html">Data Gathering</a></li>
+    <li><a href="pages/results.html">Results</a></li>
+    <li><a href="pages/recommendations.html">Recommendations</a></li>
+  </ul>
+  <button class="nav-toggle" onclick="toggleNav()">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">HCI2 — Human-Computer Interaction · Final Project</div>
+    <h1 class="hero-title">
+      <span class="cross-icon">✚</span>
+      CommonWell
+    </h1>
+    <p class="hero-subtitle">Healthcare Management System</p>
+    <p class="hero-desc">
+      A comprehensive usability evaluation report documenting heuristic analysis
+      and usability testing conducted on the CommonWell prototype — serving the
+      Barangay Halawig-Gogon community.
+    </p>
+    <div class="hero-cta">
+      <a href="https://www.figma.com/proto/ZRxCrV94qcVXNxWt2JjPTc/HMS?node-id=2-2&p=f&t=i7buCHR9zQAWyFpq-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A2&show-proto-sidebar=1" target="_blank" class="btn-primary">View Prototype ↗</a>
+      <a href="pages/results.html" class="btn-outline">See Results</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="mockup-frame">
+      <div class="mockup-bar">
+        <span></span><span></span><span></span>
+        <div class="mockup-url">commonwell.app</div>
+      </div>
+      <div class="mockup-screen">
+        <div class="mock-header">
+          <div class="mock-logo">✚ CommonWell</div>
+          <div class="mock-nav-pills">
+            <div class="pill active">Dashboard</div>
+            <div class="pill">Appointments</div>
+            <div class="pill">Records</div>
+          </div>
+        </div>
+        <div class="mock-stat-row">
+          <div class="mock-stat teal">
+            <div class="mock-stat-num">124</div>
+            <div class="mock-stat-label">Patients</div>
+          </div>
+          <div class="mock-stat blue">
+            <div class="mock-stat-num">18</div>
+            <div class="mock-stat-label">Today's Appts</div>
+          </div>
+          <div class="mock-stat green">
+            <div class="mock-stat-num">96%</div>
+            <div class="mock-stat-label">Vaccinated</div>
+          </div>
+        </div>
+        <div class="mock-list">
+          <div class="mock-list-item">
+            <div class="mock-avatar teal-bg"></div>
+            <div class="mock-info">
+              <div class="mock-name"></div>
+              <div class="mock-detail"></div>
+            </div>
+            <div class="mock-badge">Confirmed</div>
+          </div>
+          <div class="mock-list-item">
+            <div class="mock-avatar blue-bg"></div>
+            <div class="mock-info">
+              <div class="mock-name"></div>
+              <div class="mock-detail"></div>
+            </div>
+            <div class="mock-badge pending">Pending</div>
+          </div>
+          <div class="mock-list-item">
+            <div class="mock-avatar green-bg"></div>
+            <div class="mock-info">
+              <div class="mock-name"></div>
+              <div class="mock-detail"></div>
+            </div>
+            <div class="mock-badge">Confirmed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW CARDS -->
+<section class="overview">
+  <div class="container">
+    <div class="section-label">Project Overview</div>
+    <h2 class="section-title">What We Evaluated</h2>
+    <div class="overview-grid">
+      <div class="overview-card">
+        <div class="card-icon teal-icon">◈</div>
+        <h3>Heuristic Evaluation</h3>
+        <p>Each group member independently evaluated the CommonWell prototype against Jakob Nielsen's 10 Usability Heuristics to identify design issues.</p>
+      </div>
+      <div class="overview-card">
+        <div class="card-icon blue-icon">◉</div>
+        <h3>Usability Testing</h3>
+        <p>Conducted System Usability Scale (SUS) testing with actual respondents who explored appointment booking, health records, medication tracking, and more.</p>
+      </div>
+      <div class="overview-card">
+        <div class="card-icon green-icon">◆</div>
+        <h3>Design Recommendations</h3>
+        <p>Based on evaluation findings, we propose targeted improvements to enhance navigation, accessibility, and overall user experience of the platform.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROTOTYPE FEATURES -->
+<section class="features">
+  <div class="container">
+    <div class="features-left">
+      <div class="section-label">Prototype Features</div>
+      <h2 class="section-title">CommonWell System Modules</h2>
+      <p class="section-desc">The CommonWell Healthcare Management System was designed to serve students and community members of Barangay Halawig-Gogon through a suite of integrated health service modules.</p>
+      <a href="https://www.figma.com/proto/ZRxCrV94qcVXNxWt2JjPTc/HMS?node-id=2-2&p=f&t=i7buCHR9zQAWyFpq-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A2&show-proto-sidebar=1" target="_blank" class="btn-primary">Explore Prototype ↗</a>
+    </div>
+    <div class="features-right">
+      <div class="feature-item">
+        <div class="feature-num">01</div>
+        <div>
+          <h4>Appointment Booking</h4>
+          <p>Schedule and manage health appointments online.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-num">02</div>
+        <div>
+          <h4>Health Records</h4>
+          <p>Access and manage patient health records securely.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-num">03</div>
+        <div>
+          <h4>Medication Tracking</h4>
+          <p>Track prescriptions and medication schedules.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-num">04</div>
+        <div>
+          <h4>Vaccination Tracker</h4>
+          <p>Monitor vaccination status and upcoming schedules.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-num">05</div>
+        <div>
+          <h4>Admin Panel</h4>
+          <p>Manage users, data, and system configurations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GROUP MEMBERS -->
+<section class="team">
+  <div class="container">
+    <div class="section-label">Our Team</div>
+    <h2 class="section-title">Group 4 Members</h2>
+    <p class="section-desc">Partido State University · College of Engineering and Computational Sciences · Computational Sciences Department</p>
+    <div class="team-grid">
+      <div class="team-card leader">
+        <div class="team-avatar-wrap">
+          <div class="team-avatar" style="background: var(--teal)">
+            <span>JM</span>
+          </div>
+          <div class="leader-badge">Group Leader</div>
+        </div>
+        <div class="team-info">
+          <h4>Julie P. Marasigan</h4>
+          <p class="team-role">Lead Evaluator & Project Coordinator</p>
+          <p class="team-email">marasiganjulie817@gmail.com</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar-wrap">
+          <div class="team-avatar" style="background: var(--blue)">
+            <span>M2</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <h4>Member 2</h4>
+          <p class="team-role">Heuristic Evaluator</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar-wrap">
+          <div class="team-avatar" style="background: var(--green)">
+            <span>M3</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <h4>Member 3</h4>
+          <p class="team-role">Usability Tester</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar-wrap">
+          <div class="team-avatar" style="background: var(--accent)">
+            <span>M4</span>
+          </div>
+        </div>
+        <div class="team-info">
+          <h4>Member 4</h4>
+          <p class="team-role">Data Analyst</p>
+        </div>
+      </div>
+    </div>
+    <p class="team-note">⚠ Replace placeholder names and photos with actual group member info.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="nav-brand">
+        <span class="nav-cross">✚</span>
+        <span>CommonWell</span>
+      </div>
+      <p>HCI2 Final Project · Partido State University</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="pages/data-gathering.html">Data Gathering</a>
+      <a href="pages/results.html">Results</a>
+      <a href="pages/recommendations.html">Recommendations</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Group 4 — CommonWell Usability Evaluation · Partido State University · Instructor: Michael B. Amata</p>
+  </div>
+</footer>
+
+<script>
+function toggleNav() {
+  document.querySelector('.nav-links').classList.toggle('open');
+}
+// Animate on scroll
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.overview-card, .feature-item, .team-card').forEach(el => {
+  el.classList.add('fade-up');
+  obs.observe(el);
+});
+</script>
+</body>
+</html>

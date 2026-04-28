@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Results — CommonWell Usability Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css"/>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-brand"><span class="nav-cross">✚</span><span>CommonWell</span></div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="data-gathering.html">Data Gathering</a></li>
+    <li><a href="results.html" class="active">Results</a></li>
+    <li><a href="recommendations.html">Recommendations</a></li>
+  </ul>
+  <button class="nav-toggle" onclick="toggleNav()">☰</button>
+</nav>
+
+<div class="page-hero">
+  <div class="section-label">Results & Discussion</div>
+  <h1>Usability Evaluation Findings</h1>
+  <p>Summary of SUS scores, heuristic violations identified, key usability issues, and discussion of findings from the CommonWell evaluation.</p>
+</div>
+
+<section class="page-content">
+  <div class="container">
+
+    <!-- SUS SCORE SUMMARY -->
+    <div class="content-block">
+      <div class="section-label">SUS Results</div>
+      <h2>Usability Testing Summary</h2>
+      <div class="block-label">System Usability Scale scores from respondents</div>
+
+      <div class="results-grid">
+        <div class="result-stat">
+          <div class="result-stat-num" id="avgScore">—</div>
+          <div class="result-stat-label">Average SUS Score</div>
+        </div>
+        <div class="result-stat">
+          <div class="result-stat-num" style="color:var(--blue);">—</div>
+          <div class="result-stat-label">Total Respondents</div>
+        </div>
+        <div class="result-stat">
+          <div class="result-stat-num" style="color:var(--green);">—</div>
+          <div class="result-stat-label">SUS Grade (A-F)</div>
+        </div>
+        <div class="result-stat">
+          <div class="result-stat-num" style="color:var(--accent);">—</div>
+          <div class="result-stat-label">Adjective Rating</div>
+        </div>
+      </div>
+
+      <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:24px; font-style:italic;">⚠ Replace dashes above with actual computed SUS scores after collecting all respondent data.</p>
+
+      <h3 style="font-weight:700; margin-bottom:16px;">SUS Score Per Item (Sample)</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:20px;">The bars below represent sample average item scores. Replace with actual computed values.</p>
+
+      <div id="sus-bars"></div>
+    </div>
+
+    <!-- HEURISTIC EVALUATION RESULTS -->
+    <div class="content-block">
+      <div class="section-label">Heuristic Evaluation</div>
+      <h2>Nielsen's 10 Heuristics Assessment</h2>
+      <div class="block-label">Based on individual evaluations by each group member</div>
+
+      <div style="overflow-x:auto;">
+        <table class="heuristic-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Heuristic</th>
+              <th>Severity</th>
+              <th>Issue Found</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>H1</td>
+              <td>Visibility of System Status</td>
+              <td><span class="score-pill score-warn">Medium</span></td>
+              <td>Loading feedback not always visible after actions</td>
+            </tr>
+            <tr>
+              <td>H2</td>
+              <td>Match Between System & Real World</td>
+              <td><span class="score-pill score-pass">Pass</span></td>
+              <td>Medical terminology is appropriate and familiar</td>
+            </tr>
+            <tr>
+              <td>H3</td>
+              <td>User Control & Freedom</td>
+              <td><span class="score-pill score-warn">Medium</span></td>
+              <td>No clear undo/back options in booking flow</td>
+            </tr>
+            <tr>
+              <td>H4</td>
+              <td>Consistency & Standards</td>
+              <td><span class="score-pill score-fail">High</span></td>
+              <td>Button styles are inconsistent across modules</td>
+            </tr>
+            <tr>
+              <td>H5</td>
+              <td>Error Prevention</td>
+              <td><span class="score-pill score-warn">Medium</span></td>
+              <td>No confirmation dialogs before critical actions</td>
+            </tr>
+            <tr>
+              <td>H6</td>
+              <td>Recognition Rather Than Recall</td>
+              <td><span class="score-pill score-pass">Pass</span></td>
+              <td>Icons are recognizable and labeled</td>
+            </tr>
+            <tr>
+              <td>H7</td>
+              <td>Flexibility & Efficiency of Use</td>
+              <td><span class="score-pill score-warn">Medium</span></td>
+              <td>No shortcuts or advanced user features</td>
+            </tr>
+            <tr>
+              <td>H8</td>
+              <td>Aesthetic & Minimalist Design</td>
+              <td><span class="score-pill score-pass">Pass</span></td>
+              <td>Interface is clean with minimal clutter</td>
+            </tr>
+            <tr>
+              <td>H9</td>
+              <td>Help Users Recognize, Diagnose & Recover From Errors</td>
+              <td><span class="score-pill score-fail">High</span></td>
+              <td>Error messages lack specificity and guidance</td>
+            </tr>
+            <tr>
+              <td>H10</td>
+              <td>Help & Documentation</td>
+              <td><span class="score-pill score-fail">High</span></td>
+              <td>No in-app help, tooltips, or documentation available</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:16px; font-size:0.85rem; color:var(--text-muted); font-style:italic;">⚠ Update heuristic assessments with actual findings from your group's individual Heuristic Evaluation Workbooks.</p>
+    </div>
+
+    <!-- KEY ISSUES -->
+    <div class="content-block">
+      <div class="section-label">Key Issues Identified</div>
+      <h2>Usability Issues Found</h2>
+      <div class="block-label">Consolidated from heuristic evaluation and usability testing</div>
+
+      <div class="issue-card severity-high">
+        <div class="issue-meta">
+          <span class="issue-tag high">High Severity</span>
+          <span class="issue-tag">H4 — Consistency</span>
+        </div>
+        <h4>Inconsistent UI Components Across Modules</h4>
+        <p>Button styles, colors, and interactive element behaviors vary significantly between the appointment booking, health records, and admin panel modules, creating confusion for users navigating between sections.</p>
+      </div>
+
+      <div class="issue-card severity-high">
+        <div class="issue-meta">
+          <span class="issue-tag high">High Severity</span>
+          <span class="issue-tag">H10 — Help</span>
+        </div>
+        <h4>Absence of In-App Help and Documentation</h4>
+        <p>Users have no access to tooltips, tutorials, or contextual help within the system. First-time users — especially community members unfamiliar with digital health platforms — are left without guidance.</p>
+      </div>
+
+      <div class="issue-card severity-medium">
+        <div class="issue-meta">
+          <span class="issue-tag medium">Medium Severity</span>
+          <span class="issue-tag">H3 — User Control</span>
+        </div>
+        <h4>No Clear Navigation Back From Booking Flow</h4>
+        <p>Once users enter the appointment booking sequence, there is no obvious way to cancel or go back without losing entered data, reducing users' sense of control over the system.</p>
+      </div>
+
+      <div class="issue-card severity-medium">
+        <div class="issue-meta">
+          <span class="issue-tag medium">Medium Severity</span>
+          <span class="issue-tag">H1 — Visibility</span>
+        </div>
+        <h4>Missing Feedback After User Actions</h4>
+        <p>After submitting forms or completing actions, the system does not consistently provide confirmation messages or loading indicators, leaving users uncertain whether their action was successful.</p>
+      </div>
+
+      <div class="issue-card severity-low">
+        <div class="issue-meta">
+          <span class="issue-tag low">Low Severity</span>
+          <span class="issue-tag">H7 — Flexibility</span>
+        </div>
+        <h4>No Keyboard Shortcuts or Power-User Features</h4>
+        <p>Experienced users or admin personnel have no efficiency shortcuts, forcing them to navigate the same steps as first-time users regardless of familiarity with the system.</p>
+      </div>
+
+      <p style="margin-top:20px; font-size:0.85rem; color:var(--text-muted); font-style:italic;">⚠ Replace or supplement these sample issues with actual findings from your evaluation sessions.</p>
+    </div>
+
+    <!-- DISCUSSION -->
+    <div class="content-block">
+      <div class="section-label">Discussion</div>
+      <h2>Discussion of Findings</h2>
+
+      <p style="color:var(--text-muted); line-height:1.8; margin-bottom:16px;">
+        The usability evaluation of the CommonWell Healthcare Management System revealed that while the platform demonstrates a <strong>clean, aesthetically minimalist design</strong> (H8 — passed), significant usability gaps exist in the areas of consistency, error handling, and user guidance. These issues are particularly critical given the platform's intended audience: community members of Barangay Halawig-Gogon, many of whom may have limited experience with digital health systems.
+      </p>
+      <p style="color:var(--text-muted); line-height:1.8; margin-bottom:16px;">
+        The SUS testing results indicate that respondents generally found the core functionality accessible, but struggled with the <strong>absence of clear feedback mechanisms</strong> and the <strong>inconsistency of UI components</strong> across modules. The three high-severity heuristic violations — consistency (H4), error recovery (H9), and help documentation (H10) — collectively degrade the user experience, particularly for users attempting to complete multi-step tasks such as appointment booking.
+      </p>
+      <p style="color:var(--text-muted); line-height:1.8;">
+        The vaccination tracker and health records modules performed relatively better in testing, as they presented information in a straightforward list format that aligns with users' mental models. The admin panel, however, exhibited the most complexity and would benefit most from additional documentation and interface consistency improvements.
+      </p>
+      <p style="margin-top:16px; font-size:0.85rem; color:var(--text-muted); font-style:italic;">⚠ Update this discussion section with your actual findings and analysis based on your group's collected data.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="nav-brand"><span class="nav-cross">✚</span><span>CommonWell</span></div>
+      <p>HCI2 Final Project · Partido State University</p>
+    </div>
+    <div class="footer-links">
+      <a href="../index.html">Home</a>
+      <a href="data-gathering.html">Data Gathering</a>
+      <a href="results.html">Results</a>
+      <a href="recommendations.html">Recommendations</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Group 4 — CommonWell Usability Evaluation · Partido State University · Instructor: Michael B. Amata</p>
+  </div>
+</footer>
+
+<script>
+function toggleNav() {
+  document.querySelector('.nav-links').classList.toggle('open');
+}
+
+// SUS bar chart items
+const susItems = [
+  { label: "Q1 — Use frequently", score: 3.8 },
+  { label: "Q2 — Not complex (inv.)", score: 3.5 },
+  { label: "Q3 — Easy to use", score: 4.1 },
+  { label: "Q4 — No tech support needed (inv.)", score: 3.2 },
+  { label: "Q5 — Well integrated", score: 3.9 },
+  { label: "Q6 — Not inconsistent (inv.)", score: 2.8 },
+  { label: "Q7 — Quick to learn", score: 3.7 },
+  { label: "Q8 — Not cumbersome (inv.)", score: 3.4 },
+  { label: "Q9 — Confident using", score: 3.6 },
+  { label: "Q10 — No learning curve (inv.)", score: 3.1 },
+];
+
+const container = document.getElementById('sus-bars');
+susItems.forEach(item => {
+  const pct = (item.score / 5) * 100;
+  const color = item.score >= 4 ? 'var(--green)' : item.score >= 3 ? 'var(--teal)' : '#f59e0b';
+  container.innerHTML += `
+    <div class="sus-bar-wrap">
+      <div class="sus-bar-label">
+        <span style="font-size:0.85rem; color:var(--text-muted);">${item.label}</span>
+        <span style="font-weight:700; color:var(--text);">${item.score}/5</span>
+      </div>
+      <div class="sus-bar-track">
+        <div class="sus-bar-fill" style="width:${pct}%; background:${color};"></div>
+      </div>
+    </div>
+  `;
+});
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.content-block, .issue-card').forEach(el => {
+  el.classList.add('fade-up'); obs.observe(el);
+});
+</script>
+</body>
+</html>

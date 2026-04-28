@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Gathering — CommonWell Usability Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css"/>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-brand">
+    <span class="nav-cross">✚</span>
+    <span>CommonWell</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="data-gathering.html" class="active">Data Gathering</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="recommendations.html">Recommendations</a></li>
+  </ul>
+  <button class="nav-toggle" onclick="toggleNav()">☰</button>
+</nav>
+
+<div class="page-hero">
+  <div class="section-label">Data Gathering</div>
+  <h1>Evaluation Instruments & Documentation</h1>
+  <p>Consent form, respondent profiles, SUS questionnaire, and supporting documentation used in the CommonWell usability evaluation.</p>
+</div>
+
+<section class="page-content">
+  <div class="container">
+
+    <!-- PART I: CONSENT FORM -->
+    <div class="content-block">
+      <div class="section-label">Part I</div>
+      <h2>Consent Form</h2>
+      <div class="block-label">CommonWell Healthcare Management System — Usability Evaluation</div>
+
+      <div class="consent-text">
+        This study evaluates the usability of the <strong>CommonWell Healthcare Management System</strong> to assess how easily students and community members can navigate the platform and access health services. As a participant, you will explore the prototype, interact with features such as appointment booking, health records, medication tracking, vaccination tracker, and the admin panel, and complete the System Usability Scale (SUS) questionnaire. The activity takes approximately <strong>10–15 minutes</strong>.
+        <br><br>
+        <strong>Participation is entirely voluntary.</strong> You may skip any item or withdraw at any time without consequence. All responses will be kept strictly confidential, anonymized, and used solely to improve the platform. Risk is minimal — only the time involved. Your feedback directly benefits the Barangay Halawig-Gogon community and gives you firsthand experience with a local health technology platform.
+      </div>
+
+      <p style="font-size:0.85rem; color: var(--text-muted); margin-bottom: 16px;">Course Instructor: <strong>Michael B. Amata</strong> · Computational Sciences Department</p>
+
+      <p style="font-weight: 600; margin-bottom: 12px;">Please read each statement carefully. Place a checkmark (✓) in the box for each item you agree to:</p>
+      <ul class="checklist">
+        <li>I understand the purpose of this study and voluntarily agree to participate in the usability evaluation of the <strong>CommonWell Healthcare Management System</strong>.</li>
+        <li>I consent to the collection and use of my feedback and evaluation responses solely for the purpose of improving the CommonWell platform.</li>
+        <li>I acknowledge that I may withdraw my consent and discontinue participation at any time without any negative consequences.</li>
+        <li>I agree that anonymized data from my participation may be included in academic reports or publications related to this project.</li>
+        <li>I agree to allow documentation (such as photographs) during the evaluation session for the sole purpose of academic reporting by the student group.</li>
+      </ul>
+
+      <p style="margin: 20px 0 12px; font-style:italic; font-size:0.9rem; color:var(--text-muted);">By signing below, I confirm that I have read and understood this consent form, that all my questions have been answered to my satisfaction, and that I voluntarily agree to participate in this evaluation. <em>(Optional and recommended)</em></p>
+
+      <div class="sig-box">
+        <div class="sig-field"><label>FULL NAME</label></div>
+        <div class="sig-field"><label>SIGNATURE</label></div>
+        <div class="sig-field"><label>DATE</label></div>
+        <div class="sig-field">
+          <label>GROUP LEADER</label>
+          <span style="font-size:0.9rem; font-weight:600;">Julie P. Marasigan</span><br>
+          <span style="font-size:0.8rem; color:var(--teal);">marasiganjulie817@gmail.com</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART II: DEMOGRAPHIC PROFILE -->
+    <div class="content-block">
+      <div class="section-label">Part II</div>
+      <h2>Demographic Profile</h2>
+      <div class="block-label">Respondent information collected prior to usability testing</div>
+
+      <table class="demo-table">
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Options / Format</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Age</td>
+            <td><div style="background:var(--surface2); height:28px; border-radius:6px; width:120px;"></div></td>
+          </tr>
+          <tr>
+            <td>Gender</td>
+            <td>
+              <span class="option-badge">☐ Male</span>
+              <span class="option-badge">☐ Female</span>
+              <span class="option-badge">☐ Prefer not to say</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Course / Program</td>
+            <td><div style="background:var(--surface2); height:28px; border-radius:6px; width:180px;"></div></td>
+          </tr>
+          <tr>
+            <td>Year Level</td>
+            <td>
+              <span class="option-badge">☐ 1st Year</span>
+              <span class="option-badge">☐ 2nd Year</span>
+              <span class="option-badge">☐ 3rd Year</span>
+              <span class="option-badge">☐ 4th Year</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Experience with similar systems?</td>
+            <td>
+              <span class="option-badge">☐ Yes</span>
+              <span class="option-badge">☐ No</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Frequency of technology use</td>
+            <td>
+              <span class="option-badge">☐ Daily</span>
+              <span class="option-badge">☐ Weekly</span>
+              <span class="option-badge">☐ Occasionally</span>
+              <span class="option-badge">☐ Rarely</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Device used for this prototype?</td>
+            <td>
+              <span class="option-badge">☐ Smartphone</span>
+              <span class="option-badge">☐ Tablet</span>
+              <span class="option-badge">☐ Laptop/Desktop</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top: 24px; padding: 16px; background: var(--teal-light); border-radius: 10px; border: 1px solid var(--teal);">
+        <p style="font-size:0.9rem; color:var(--teal-dark); font-weight:600;">⚠ Respondents Summary</p>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-top:6px;">Replace this block with a summary table of all respondent demographics after collecting completed forms. Include total count, gender breakdown, year level distribution, and device preference.</p>
+      </div>
+    </div>
+
+    <!-- PART III: SUS QUESTIONNAIRE -->
+    <div class="content-block">
+      <div class="section-label">Part III</div>
+      <h2>System Usability Scale (SUS)</h2>
+      <div class="block-label">10-item validated usability measurement instrument</div>
+
+      <p style="color:var(--text-muted); margin-bottom:20px; font-size:0.95rem; line-height:1.7;">
+        The System Usability Scale (SUS) is a widely used tool in usability research that provides a quick and reliable measure of the perceived usability of a system. It consists of <strong>10 statements</strong> that assess ease of use, learnability, and consistency.
+      </p>
+
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;">
+        <span class="option-badge">1 — Strongly Disagree</span>
+        <span class="option-badge">2 — Disagree</span>
+        <span class="option-badge">3 — Neutral</span>
+        <span class="option-badge">4 — Agree</span>
+        <span class="option-badge">5 — Strongly Agree</span>
+      </div>
+
+      <div style="overflow-x:auto;">
+        <table class="sus-table">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Statement</th>
+              <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>I think that I would like to use this system frequently.</td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>I found the system unnecessarily complex.</td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>I thought the system was easy to use.</td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>I think that I would need the support of a technical person to use this system.</td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>I found the various functions in this system were well integrated.</td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>I thought there was too much inconsistency in this system.</td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>I would imagine that most people would learn to use this system very quickly.</td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>I found the system very cumbersome to use.</td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>I felt very confident using the system.</td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>I needed to learn a lot of things before I could get going with this system.</td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+              <td><div class="radio-circle"></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Part IV Open-ended -->
+      <h3 style="margin-top:32px; margin-bottom:16px; font-family:'DM Serif Display',serif; font-size:1.4rem;">Part IV — Open-Ended Questions</h3>
+      <div style="margin-bottom:20px;">
+        <p style="font-weight:600; margin-bottom:8px;">1. What features or aspects of the CommonWell Healthcare Management System did you find most effective or helpful?</p>
+        <div style="border: 1px solid var(--border); border-radius:8px; padding: 16px; min-height: 60px; background:var(--bg); color:var(--text-muted); font-style:italic; font-size:0.9rem;">
+          [Respondent answers will be compiled and summarized here]
+        </div>
+      </div>
+      <div>
+        <p style="font-weight:600; margin-bottom:8px;">2. What improvements can you suggest for the system?</p>
+        <div style="border: 1px solid var(--border); border-radius:8px; padding: 16px; min-height: 60px; background:var(--bg); color:var(--text-muted); font-style:italic; font-size:0.9rem;">
+          [Respondent suggestions will be compiled and summarized here]
+        </div>
+      </div>
+    </div>
+
+    <!-- DOCUMENTATION -->
+    <div class="content-block">
+      <div class="section-label">Documentation</div>
+      <h2>Supporting Materials</h2>
+      <div class="block-label">Photos, files, and related documents from the evaluation session</div>
+
+      <div class="doc-grid" id="photoGrid">
+        <div class="doc-item">
+          <div class="doc-icon">📷</div>
+          <p>Testing Session<br>Photo 1</p>
+        </div>
+        <div class="doc-item">
+          <div class="doc-icon">📷</div>
+          <p>Testing Session<br>Photo 2</p>
+        </div>
+        <div class="doc-item">
+          <div class="doc-icon">📷</div>
+          <p>Testing Session<br>Photo 3</p>
+        </div>
+        <div class="doc-item">
+          <div class="doc-icon">📄</div>
+          <p>Heuristic Evaluation Workbook (PDF)</p>
+        </div>
+        <div class="doc-item">
+          <div class="doc-icon">📋</div>
+          <p>Completed SUS Forms</p>
+        </div>
+        <div class="doc-item" style="border:2px dashed var(--teal); cursor:pointer;" onclick="this.querySelector('input').click()">
+          <div class="doc-icon">➕</div>
+          <p>Add Photo / File</p>
+          <input type="file" style="display:none" accept="image/*" onchange="addPhoto(event)">
+        </div>
+      </div>
+      <p style="margin-top:16px; font-size:0.85rem; color:var(--text-muted); font-style:italic;">⚠ Replace placeholder tiles with actual photos and documents from your testing sessions. Include the completed Heuristic Evaluation Workbook PDF per rubric requirements.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="nav-brand"><span class="nav-cross">✚</span><span>CommonWell</span></div>
+      <p>HCI2 Final Project · Partido State University</p>
+    </div>
+    <div class="footer-links">
+      <a href="../index.html">Home</a>
+      <a href="data-gathering.html">Data Gathering</a>
+      <a href="results.html">Results</a>
+      <a href="recommendations.html">Recommendations</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Group 4 — CommonWell Usability Evaluation · Partido State University · Instructor: Michael B. Amata</p>
+  </div>
+</footer>
+
+<script>
+function toggleNav() {
+  document.querySelector('.nav-links').classList.toggle('open');
+}
+function addPhoto(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const url = URL.createObjectURL(file);
+  const grid = document.getElementById('photoGrid');
+  const addBtn = grid.lastElementChild;
+  const div = document.createElement('div');
+  div.className = 'doc-item';
+  div.innerHTML = `<img src="${url}" style="width:100%;height:80px;object-fit:cover;border-radius:6px;margin-bottom:6px;"><p>${file.name}</p>`;
+  grid.insertBefore(div, addBtn);
+}
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.content-block').forEach(el => {
+  el.classList.add('fade-up'); obs.observe(el);
+});
+</script>
+</body>
+</html>
