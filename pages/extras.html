@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Extra Pages — CommonWell Usability Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    .reflection-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .reflection-card:hover {
+      box-shadow: 0 8px 32px rgba(13,148,136,0.10);
+      transform: translateY(-2px);
+    }
+    .reflection-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: var(--teal);
+      border-radius: 4px 0 0 4px;
+    }
+    .member-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--teal-light);
+      color: var(--teal-dark);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .member-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--teal);
+    }
+    .reflection-quote {
+      color: var(--text-muted);
+      line-height: 1.85;
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+
+    .finding-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .finding-item:last-child { border-bottom: none; }
+    .finding-num {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      background: var(--teal-light);
+      color: var(--teal-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+    .finding-content h4 {
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+    .finding-content p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+    .finding-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 12px;
+      margin-bottom: 8px;
+    }
+    .badge-ux  { background: #dbeafe; color: #1e40af; }
+    .badge-acc { background: #fef9c3; color: #713f12; }
+    .badge-mob { background: #dcfce7; color: #166534; }
+    .badge-int { background: #fce7f3; color: #9d174d; }
+
+    .walkthrough-step {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 28px;
+      position: relative;
+    }
+    .walkthrough-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 27px;
+      top: 56px;
+      bottom: -28px;
+      width: 2px;
+      background: var(--border);
+    }
+    .step-circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .step-body {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 22px;
+    }
+    .step-body h4 {
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+    .step-body p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+    .step-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--teal);
+      margin-bottom: 4px;
+    }
+
+    .heuristic-pdf-banner {
+      background: linear-gradient(135deg, #f0fdfa, #eff6ff);
+      border: 1.5px solid var(--teal);
+      border-radius: 14px;
+      padding: 24px 28px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-top: 8px;
+    }
+    .pdf-icon {
+      font-size: 2.2rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .heuristic-pdf-banner h4 {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .heuristic-pdf-banner p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 0 0 14px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-brand">
+    <span class="nav-cross"><img src="../images/logo.png" alt="logo"></span>
+    <span>CommonWell</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="data-gathering.html">Data Gathering</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="recommendations.html">Recommendations</a></li>
+    <li><a href="extras.html" class="active">Extras</a></li>
+  </ul>
+  <button class="nav-toggle" onclick="toggleNav()">☰</button>
+</nav>
+
+<div class="page-hero">
+  <div class="section-label">Extra Pages</div>
+  <h1>Reflections, Findings & Walkthrough</h1>
+  <p>Group member reflections on the evaluation process, additional findings from usability testing, and a guided walkthrough of the CommonWell prototype.</p>
+</div>
+
+<section class="page-content">
+  <div class="container">
+
+    <!-- ── REFLECTIONS ── -->
+    <div class="content-block">
+      <div class="section-label">Reflections</div>
+      <h2>Group Member Reflections</h2>
+      <div class="block-label">Personal insights and learning outcomes from the HCI evaluation process</div>
+
+      <div class="reflection-card">
+        <div class="member-tag">
+          <img src="../images/jho.png" alt="Julie" class="member-avatar">
+          Julie P. Marasigan · Group Leader
+        </div>
+        <p class="reflection-quote">
+          "Leading this evaluation taught me just how much the gap between a designer's intent and a user's experience can widen without proper usability testing. Watching respondents navigate the CommonWell prototype — some confidently, others hesitantly — made the SUS data feel real and personal. The process reinforced for me that good design is never finished; it's an ongoing conversation between builders and the people they build for. I leave this project with a deeper appreciation for iterative design and the value of listening before assuming."
+        </p>
+      </div>
+
+      <div class="reflection-card">
+        <div class="member-tag">
+          <img src="../images/kim.jpg" alt="Kim" class="member-avatar">
+          Kim · Member
+        </div>
+        <p class="reflection-quote">
+          "Conducting the heuristic evaluation opened my eyes to issues I had completely overlooked as someone familiar with the system. Nielsen's 10 heuristics gave us a structured lens to evaluate what we otherwise might have dismissed. The H9 (Error Recovery) and H10 (Help & Documentation) failures surprised me the most — they seem like basics, yet they're so often neglected. Moving forward, I'll carry the habit of asking 'what happens when this breaks?' in every interface I design."
+        </p>
+      </div>
+
+      <div class="reflection-card">
+        <div class="member-tag">
+          <img src="../images/adie.png" alt="Adie" class="member-avatar">
+          Adie · Member
+        </div>
+        <p class="reflection-quote">
+          "Administering the SUS questionnaire to 40 respondents was both humbling and enlightening. Many of them were first-time users of a healthcare management system, and their confusion with certain flows reminded me that we design for our users — not ourselves. The quantitative score of 55.75 felt like a challenge, not a verdict. It told us exactly where to improve. I'm grateful for a methodology that transforms subjective feelings into actionable numbers."
+        </p>
+      </div>
+
+      <div class="reflection-card">
+        <div class="member-tag">
+          <img src="../images/anola.png" alt="Anola" class="member-avatar">
+          Anola · Member
+        </div>
+        <p class="reflection-quote">
+          "This project deepened my understanding of how people interact with health technology. The demographic data revealed that 62.5% of our respondents had no prior experience with similar platforms — a stark reminder that assumptions about digital literacy can undermine even well-intentioned designs. Documenting and analyzing the open-ended feedback was especially rewarding; the voice of the user, captured in their own words, is the most honest form of UX research."
+        </p>
+      </div>
+    </div>
+
+    <!-- ── ADDITIONAL FINDINGS ── -->
+    <div class="content-block">
+      <div class="section-label">Additional Findings</div>
+      <h2>Supplementary Usability Findings</h2>
+      <div class="block-label">Observations and patterns not fully captured in the primary SUS results</div>
+
+      <div class="finding-item">
+        <div class="finding-num">1</div>
+        <div class="finding-content">
+          <span class="finding-badge badge-mob">Mobile Behavior</span>
+          <h4>Smartphone Users Struggled Most With Form Inputs</h4>
+          <p>90% of respondents accessed the prototype via smartphone, yet the appointment booking form fields were not optimized for mobile keyboards. Several respondents had to zoom in and scroll horizontally to complete forms — a friction point that likely contributed to the below-average H3 (User Control) and overall SUS score.</p>
+        </div>
+      </div>
+
+      <div class="finding-item">
+        <div class="finding-num">2</div>
+        <div class="finding-content">
+          <span class="finding-badge badge-ux">Task Completion</span>
+          <h4>Appointment Booking Had the Highest Task Abandonment Rate</h4>
+          <p>Informal observation during testing sessions noted that the appointment booking flow caused the most visible hesitation. Multiple participants paused on the date/time selection screen and expressed uncertainty about whether their selection had been registered — consistent with the H1 (Visibility of System Status) violation identified in heuristic evaluation.</p>
+        </div>
+      </div>
+
+      <div class="finding-item">
+        <div class="finding-num">3</div>
+        <div class="finding-content">
+          <span class="finding-badge badge-acc">Accessibility</span>
+          <h4>Text Contrast Insufficient in Secondary Labels</h4>
+          <p>During evaluation, two members independently flagged that muted gray text used in secondary labels and helper text did not meet WCAG 2.1 AA contrast ratio requirements (minimum 4.5:1 for body text). This is a silent barrier for respondents with visual impairments — a concern given the healthcare context of the platform.</p>
+        </div>
+      </div>
+
+      <div class="finding-item">
+        <div class="finding-num">4</div>
+        <div class="finding-content">
+          <span class="finding-badge badge-int">Trust & Confidence</span>
+          <h4>Users Expressed Uncertainty About Data Privacy</h4>
+          <p>Several open-ended responses mentioned concerns about where their health data would be stored and who could access it. While the system includes a consent form, in-app trust signals (e.g., privacy indicators, data security badges, or clear messaging) are absent — a gap that may discourage adoption especially among community members new to digital health platforms.</p>
+        </div>
+      </div>
+
+      <div class="finding-item">
+        <div class="finding-num">5</div>
+        <div class="finding-content">
+          <span class="finding-badge badge-ux">Navigation</span>
+          <h4>Admin Panel Was Perceived as Separate From the Main App</h4>
+          <p>Several respondents who explored the admin-facing features commented that it "felt like a different website." The visual and navigational disconnect between the patient-facing and admin-facing portions of the prototype contributed to the H4 (Consistency & Standards) violation and reinforces the need for a unified design system across all user roles.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PROTOTYPE WALKTHROUGH ── -->
+    <div class="content-block">
+      <div class="section-label">Prototype Walkthrough</div>
+      <h2>CommonWell Feature Walkthrough</h2>
+      <div class="block-label">A guided tour of the key screens and flows tested during the evaluation</div>
+
+      <p style="color:var(--text-muted); margin-bottom:28px; font-size:0.95rem; line-height:1.7;">
+        The CommonWell Healthcare Management System prototype was built in Figma and covers five core modules. Below is a step-by-step walkthrough of the flows evaluated by our 40 respondents.
+      </p>
+
+      <div class="walkthrough-step">
+        <div class="step-circle">🏠</div>
+        <div class="step-body">
+          <div class="step-label">Step 1 — Entry Point</div>
+          <h4>Landing Screen & Login</h4>
+          <p>Users arrive at the CommonWell landing page, which presents the platform's purpose and a login/sign-up prompt. The login flow asks for credentials and routes users to either the patient dashboard or the admin panel depending on their role.</p>
+        </div>
+      </div>
+
+      <div class="walkthrough-step">
+        <div class="step-circle">📅</div>
+        <div class="step-body">
+          <div class="step-label">Step 2 — Core Flow</div>
+          <h4>Appointment Booking</h4>
+          <p>The patient selects "Book Appointment," chooses a healthcare service (e.g., general consultation, vaccination), picks an available date and time slot, and confirms the booking. This was the primary task given to most respondents and the highest-friction flow identified in the evaluation.</p>
+        </div>
+      </div>
+
+      <div class="walkthrough-step">
+        <div class="step-circle">📋</div>
+        <div class="step-body">
+          <div class="step-label">Step 3 — Health Records</div>
+          <h4>Viewing & Managing Health Records</h4>
+          <p>Patients can access their health history, including past appointments, diagnoses, and prescriptions. The records view allows filtering by date and category. Evaluators noted that accessing specific records required more steps than expected, surfacing a minor navigation efficiency issue.</p>
+        </div>
+      </div>
+
+      <div class="walkthrough-step">
+        <div class="step-circle">💊</div>
+        <div class="step-body">
+          <div class="step-label">Step 4 — Medication & Vaccines</div>
+          <h4>Medication Tracker & Vaccination Schedule</h4>
+          <p>This module displays the patient's active medications, dosage schedules, and upcoming vaccination dates. Respondents found the vaccination tracker visually clear but noted that medication management lacked reminders or alert mechanisms for missed doses.</p>
+        </div>
+      </div>
+
+      <div class="walkthrough-step">
+        <div class="step-circle">🛠️</div>
+        <div class="step-body">
+          <div class="step-label">Step 5 — Admin Panel</div>
+          <h4>Admin Panel & Patient Management</h4>
+          <p>The admin view gives healthcare staff access to all patient records, appointment schedules, and system settings. Admin users can approve appointments, update health records, and manage user accounts. Evaluators flagged visual inconsistency between the admin UI and patient-facing modules as a high-severity issue.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 32px; display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+        <a href="https://www.figma.com/proto/ZRxCrV94qcVXNxWt2JjPTc/HMS?node-id=2-2&p=f&t=i7buCHR9zQAWyFpq-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A2&show-proto-sidebar=1" target="_blank" class="btn-primary">
+          Open Live Prototype ↗
+        </a>
+        <a href="recommendations.html" class="btn-outline">View Recommendations →</a>
+      </div>
+    </div>
+
+    <!-- ── HEURISTIC WORKBOOK ATTACHMENT ── -->
+    <div class="content-block">
+      <div class="section-label">Documentation</div>
+      <h2>Heuristic Evaluation Workbook</h2>
+      <div class="block-label">Individual workbooks completed by each group member</div>
+
+      <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.7; margin-bottom:20px;">
+        Each group member independently completed a Heuristic Evaluation Workbook, assessing the CommonWell prototype against Nielsen's 10 Usability Heuristics. Attach your completed PDF below before final submission.
+      </p>
+
+      <div class="heuristic-pdf-banner">
+        <div class="pdf-icon">📄</div>
+        <div>
+          <h4>Completed Heuristic Evaluation Workbooks (PDF)</h4>
+          <p>Attach the PDF of each group member's completed Heuristic Evaluation Workbook here. Each member must submit their own individual evaluation as required by the course rubric.</p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <span style="background:var(--surface2); border:1px dashed var(--border); border-radius:8px; padding:8px 16px; font-size:0.85rem; color:var(--text-muted); cursor:pointer;">
+              📎 Julie_HeuristicWorkbook.pdf
+            </span>
+            <span style="background:var(--surface2); border:1px dashed var(--border); border-radius:8px; padding:8px 16px; font-size:0.85rem; color:var(--text-muted); cursor:pointer;">
+              📎 Kim_HeuristicWorkbook.pdf
+            </span>
+            <span style="background:var(--surface2); border:1px dashed var(--border); border-radius:8px; padding:8px 16px; font-size:0.85rem; color:var(--text-muted); cursor:pointer;">
+              📎 Adie_HeuristicWorkbook.pdf
+            </span>
+            <span style="background:var(--surface2); border:1px dashed var(--border); border-radius:8px; padding:8px 16px; font-size:0.85rem; color:var(--text-muted); cursor:pointer;">
+              📎 Anola_HeuristicWorkbook.pdf
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:14px; font-size:0.82rem; color:var(--text-muted); font-style:italic;">
+        ⚠ Replace the placeholder filenames above with actual uploaded PDFs or Google Drive links before final submission.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="nav-brand"><span class="nav-cross">✚</span><span>CommonWell</span></div>
+      <p>HCI2 Final Project · Partido State University</p>
+    </div>
+    <div class="footer-links">
+      <a href="../index.html">Home</a>
+      <a href="data-gathering.html">Data Gathering</a>
+      <a href="results.html">Results</a>
+      <a href="recommendations.html">Recommendations</a>
+      <a href="extras.html">Extras</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Group 4 — CommonWell Usability Evaluation · Partido State University · Instructor: Michael B. Amata</p>
+  </div>
+</footer>
+
+<script>
+function toggleNav() {
+  document.querySelector('.nav-links').classList.toggle('open');
+}
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.content-block, .reflection-card, .finding-item, .walkthrough-step').forEach(el => {
+  el.classList.add('fade-up'); obs.observe(el);
+});
+</script>
+</body>
+</html>
